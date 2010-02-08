@@ -1,0 +1,10 @@
+; Find the kth element of a list
+(define (kth lst k)
+	(if (or (null? lst) (<= k 0))
+         '()
+         (if (= k 1)
+             (car lst)
+             (kth (cdr lst) (- k 1))
+         )
+	)
+)
