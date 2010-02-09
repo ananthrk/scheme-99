@@ -1,0 +1,10 @@
+; Flatten a nested list
+(define (flatten lst) 
+	(if(null? lst)
+		'()
+		(if(list? (car lst))
+			(append (flatten (car lst)) (flatten (cdr lst)))
+			(append (cons (car lst) '()) (flatten (cdr lst)))
+		)
+	)
+)
