@@ -1,0 +1,13 @@
+; Replicate list elements a given number of times
+(define (repl lst num)
+  (if (null? lst)
+      '()
+       (append (replaux (car lst) num) (repl (cdr lst) num))
+  )
+)
+(define (replaux elem num)
+  (if (zero? num)
+      '()
+       (append (list elem) (replaux elem (- num 1)))
+  )
+)
